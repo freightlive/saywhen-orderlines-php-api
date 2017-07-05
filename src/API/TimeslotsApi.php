@@ -111,7 +111,7 @@ class TimeslotsApi
      * @param string $time_slots Time Slots in JSON format (required)
      * @param string $fields_and_values Fields and Values in JSON format (required)
      * @throws \SayWhenOrderlines\ApiException on non-2xx response
-     * @return \SayWhenOrderlines\Model\OrderlineModel[]
+     * @return \SayWhenOrderlines\Model\TimeslotModel[]
      */
     public function timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $time_slots, $fields_and_values)
     {
@@ -129,7 +129,7 @@ class TimeslotsApi
      * @param string $time_slots Time Slots in JSON format (required)
      * @param string $fields_and_values Fields and Values in JSON format (required)
      * @throws \SayWhenOrderlines\ApiException on non-2xx response
-     * @return array of \SayWhenOrderlines\Model\OrderlineModel[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SayWhenOrderlines\Model\TimeslotModel[], HTTP status code, HTTP response headers (array of strings)
      */
     public function timeslotsRetreivePossibleOrderlinesWithHttpInfo($back_office_partner_id, $front_office_partner_id, $time_slots, $fields_and_values)
     {
@@ -200,15 +200,15 @@ class TimeslotsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\SayWhenOrderlines\Model\OrderlineModel[]',
+                '\SayWhenOrderlines\Model\TimeslotModel[]',
                 '/timeslots/retrieve-possible-orderlines'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\SayWhenOrderlines\Model\OrderlineModel[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SayWhenOrderlines\Model\TimeslotModel[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SayWhenOrderlines\Model\OrderlineModel[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SayWhenOrderlines\Model\TimeslotModel[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

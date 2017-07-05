@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **timeslotsRetreivePossibleOrderlines**
-> \SayWhenOrderlines\Model\OrderlineModel[] timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $time_slots, $fields_and_values)
+> \SayWhenOrderlines\Model\TimeslotModel[] timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $time_slots, $fields_and_values)
 
 Retrieve all orderlines for given timeslots
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SayWhenOrderlines\Model\OrderlineModel[]**](../Model/OrderlineModel.md)
+[**\SayWhenOrderlines\Model\TimeslotModel[]**](../Model/TimeslotModel.md)
 
 ### Authorization
 
