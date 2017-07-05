@@ -72,7 +72,7 @@ class ServiceApi
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('http://local.orderlines.saywhen.nl/api/v1');
+            $apiClient->getConfig()->setHost('https://orderlines.saywhen.nl/api/v1');
         }
 
         $this->apiClient = $apiClient;
