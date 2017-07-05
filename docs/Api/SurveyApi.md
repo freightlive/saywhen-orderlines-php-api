@@ -1,6 +1,6 @@
 # SayWhenOrderlines\SurveyApi
 
-All URIs are relative to *https://orderlines.saywhen.nl/api/v1*
+All URIs are relative to *http://local.orderlines.saywhen.nl/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
