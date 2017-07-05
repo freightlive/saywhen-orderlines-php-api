@@ -108,13 +108,14 @@ class TimeslotsApi
      *
      * @param string $back_office_partner_id BackOffice Partner ID (required)
      * @param string $front_office_partner_id FrontOffice Partner ID (required)
-     * @param string $timeslots Timeslots in JSON format (required)
+     * @param string $time_slots Time Slots in JSON format (required)
+     * @param string $fields_and_values Fields and Values in JSON format (required)
      * @throws \SayWhenOrderlines\ApiException on non-2xx response
      * @return \SayWhenOrderlines\Model\OrderlineModel[]
      */
-    public function timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $timeslots)
+    public function timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $time_slots, $fields_and_values)
     {
-        list($response) = $this->timeslotsRetreivePossibleOrderlinesWithHttpInfo($back_office_partner_id, $front_office_partner_id, $timeslots);
+        list($response) = $this->timeslotsRetreivePossibleOrderlinesWithHttpInfo($back_office_partner_id, $front_office_partner_id, $time_slots, $fields_and_values);
         return $response;
     }
 
@@ -125,11 +126,12 @@ class TimeslotsApi
      *
      * @param string $back_office_partner_id BackOffice Partner ID (required)
      * @param string $front_office_partner_id FrontOffice Partner ID (required)
-     * @param string $timeslots Timeslots in JSON format (required)
+     * @param string $time_slots Time Slots in JSON format (required)
+     * @param string $fields_and_values Fields and Values in JSON format (required)
      * @throws \SayWhenOrderlines\ApiException on non-2xx response
      * @return array of \SayWhenOrderlines\Model\OrderlineModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function timeslotsRetreivePossibleOrderlinesWithHttpInfo($back_office_partner_id, $front_office_partner_id, $timeslots)
+    public function timeslotsRetreivePossibleOrderlinesWithHttpInfo($back_office_partner_id, $front_office_partner_id, $time_slots, $fields_and_values)
     {
         // verify the required parameter 'back_office_partner_id' is set
         if ($back_office_partner_id === null) {
@@ -139,9 +141,13 @@ class TimeslotsApi
         if ($front_office_partner_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $front_office_partner_id when calling timeslotsRetreivePossibleOrderlines');
         }
-        // verify the required parameter 'timeslots' is set
-        if ($timeslots === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $timeslots when calling timeslotsRetreivePossibleOrderlines');
+        // verify the required parameter 'time_slots' is set
+        if ($time_slots === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $time_slots when calling timeslotsRetreivePossibleOrderlines');
+        }
+        // verify the required parameter 'fields_and_values' is set
+        if ($fields_and_values === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fields_and_values when calling timeslotsRetreivePossibleOrderlines');
         }
         // parse inputs
         $resourcePath = "/timeslots/retrieve-possible-orderlines";
@@ -164,8 +170,12 @@ class TimeslotsApi
             $queryParams['frontOfficePartnerId'] = $this->apiClient->getSerializer()->toQueryValue($front_office_partner_id);
         }
         // query params
-        if ($timeslots !== null) {
-            $queryParams['timeslots'] = $this->apiClient->getSerializer()->toQueryValue($timeslots);
+        if ($time_slots !== null) {
+            $queryParams['timeSlots'] = $this->apiClient->getSerializer()->toQueryValue($time_slots);
+        }
+        // query params
+        if ($fields_and_values !== null) {
+            $queryParams['fieldsAndValues'] = $this->apiClient->getSerializer()->toQueryValue($fields_and_values);
         }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **timeslotsRetreivePossibleOrderlines**
-> \SayWhenOrderlines\Model\OrderlineModel[] timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $timeslots)
+> \SayWhenOrderlines\Model\OrderlineModel[] timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $time_slots, $fields_and_values)
 
 Retrieve all orderlines for given timeslots
 
@@ -27,10 +27,11 @@ SayWhenOrderlines\Configuration::getDefaultConfiguration()->setApiKey('ApiKey', 
 $api_instance = new SayWhenOrderlines\Api\TimeslotsApi();
 $back_office_partner_id = "back_office_partner_id_example"; // string | BackOffice Partner ID
 $front_office_partner_id = "front_office_partner_id_example"; // string | FrontOffice Partner ID
-$timeslots = "timeslots_example"; // string | Timeslots in JSON format
+$time_slots = "time_slots_example"; // string | Time Slots in JSON format
+$fields_and_values = "fields_and_values_example"; // string | Fields and Values in JSON format
 
 try {
-    $result = $api_instance->timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $timeslots);
+    $result = $api_instance->timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $time_slots, $fields_and_values);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TimeslotsApi->timeslotsRetreivePossibleOrderlines: ', $e->getMessage(), PHP_EOL;
@@ -44,7 +45,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **back_office_partner_id** | **string**| BackOffice Partner ID |
  **front_office_partner_id** | **string**| FrontOffice Partner ID |
- **timeslots** | **string**| Timeslots in JSON format |
+ **time_slots** | **string**| Time Slots in JSON format |
+ **fields_and_values** | **string**| Fields and Values in JSON format |
 
 ### Return type
 
