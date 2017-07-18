@@ -187,7 +187,7 @@ class SurveyApi
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath,
-                'GET',
+                'POST',
                 $queryParams,
                 $httpBody,
                 $headerParams,

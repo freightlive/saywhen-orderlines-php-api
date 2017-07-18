@@ -4,7 +4,7 @@ All URIs are relative to *https://orderlines.saywhen.nl/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**surveyAnalyseAnswers**](SurveyApi.md#surveyAnalyseAnswers) | **GET** /survey/analyse-answers | Analyse Answers and determine extra order lines
+[**surveyAnalyseAnswers**](SurveyApi.md#surveyAnalyseAnswers) | **POST** /survey/analyse-answers | Analyse Answers and determine extra order lines
 [**surveyRetreivePossibleOrderlines**](SurveyApi.md#surveyRetreivePossibleOrderlines) | **POST** /survey/retrieve-possible-orderlines | Retrieve all orderlines for possible answers for a given question
 
 
