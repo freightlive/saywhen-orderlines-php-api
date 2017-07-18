@@ -76,7 +76,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://orderlines.saywhen.nl/api/v1*
+All URIs are relative to *http://local.orderlines.saywhen.nl/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -106,7 +106,7 @@ Class | Method | HTTP request | Description
 *ServiceApi* | [**updateService**](docs/Api/ServiceApi.md#updateservice) | **PUT** /service/{serviceId} | Update a Service
 *SurveyApi* | [**surveyAnalyseAnswers**](docs/Api/SurveyApi.md#surveyanalyseanswers) | **GET** /survey/analyse-answers | Analyse Answers and determine extra order lines
 *SurveyApi* | [**surveyRetreivePossibleOrderlines**](docs/Api/SurveyApi.md#surveyretreivepossibleorderlines) | **GET** /survey/retrieve-possible-orderlines | Retrieve all orderlines for possible answers for a given question
-*TimeslotsApi* | [**timeslotsRetreivePossibleOrderlines**](docs/Api/TimeslotsApi.md#timeslotsretreivepossibleorderlines) | **GET** /timeslots/retrieve-possible-orderlines | Retrieve all orderlines for given timeslots
+*TimeslotsApi* | [**timeslotsRetreivePossibleOrderlines**](docs/Api/TimeslotsApi.md#timeslotsretreivepossibleorderlines) | **POST** /timeslots/retrieve-possible-orderlines | Retrieve all orderlines for given timeslots
 
 
 ## Documentation For Models
@@ -139,6 +139,7 @@ Class | Method | HTTP request | Description
  - [ServiceModel](docs/Model/ServiceModel.md)
  - [ServiceOptionsModel](docs/Model/ServiceOptionsModel.md)
  - [ServiceRetrieveListArguments](docs/Model/ServiceRetrieveListArguments.md)
+ - [TimeSlotsOrderlinesPostModel](docs/Model/TimeSlotsOrderlinesPostModel.md)
  - [TimeslotModel](docs/Model/TimeslotModel.md)
 
 

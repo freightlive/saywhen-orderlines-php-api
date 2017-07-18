@@ -101,7 +101,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://orderlines.saywhen.nl/api/v1';
+    protected $host = 'http://local.orderlines.saywhen.nl/api/v1';
 
     /**
      * Timeout (second) of the HTTP request, by default set to 0, no timeout

@@ -1,14 +1,14 @@
 # SayWhenOrderlines\TimeslotsApi
 
-All URIs are relative to *https://orderlines.saywhen.nl/api/v1*
+All URIs are relative to *http://local.orderlines.saywhen.nl/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**timeslotsRetreivePossibleOrderlines**](TimeslotsApi.md#timeslotsRetreivePossibleOrderlines) | **GET** /timeslots/retrieve-possible-orderlines | Retrieve all orderlines for given timeslots
+[**timeslotsRetreivePossibleOrderlines**](TimeslotsApi.md#timeslotsRetreivePossibleOrderlines) | **POST** /timeslots/retrieve-possible-orderlines | Retrieve all orderlines for given timeslots
 
 
 # **timeslotsRetreivePossibleOrderlines**
-> \SayWhenOrderlines\Model\TimeslotModel[] timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $time_slots, $fields_and_values)
+> \SayWhenOrderlines\Model\TimeslotModel[] timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $body)
 
 Retrieve all orderlines for given timeslots
 
@@ -27,11 +27,10 @@ SayWhenOrderlines\Configuration::getDefaultConfiguration()->setApiKey('ApiKey', 
 $api_instance = new SayWhenOrderlines\Api\TimeslotsApi();
 $back_office_partner_id = "back_office_partner_id_example"; // string | BackOffice Partner ID
 $front_office_partner_id = "front_office_partner_id_example"; // string | FrontOffice Partner ID
-$time_slots = "time_slots_example"; // string | Time Slots in JSON format
-$fields_and_values = "fields_and_values_example"; // string | Fields and Values in JSON format
+$body = new \SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel(); // \SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel | Orderline object
 
 try {
-    $result = $api_instance->timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $time_slots, $fields_and_values);
+    $result = $api_instance->timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TimeslotsApi->timeslotsRetreivePossibleOrderlines: ', $e->getMessage(), PHP_EOL;
@@ -45,8 +44,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **back_office_partner_id** | **string**| BackOffice Partner ID |
  **front_office_partner_id** | **string**| FrontOffice Partner ID |
- **time_slots** | **string**| Time Slots in JSON format |
- **fields_and_values** | **string**| Fields and Values in JSON format |
+ **body** | [**\SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel**](../Model/\SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel.md)| Orderline object |
 
 ### Return type
 
