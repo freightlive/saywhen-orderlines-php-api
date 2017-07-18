@@ -105,7 +105,7 @@ Class | Method | HTTP request | Description
 *ServiceApi* | [**retrieveService**](docs/Api/ServiceApi.md#retrieveservice) | **GET** /service/{serviceId} | Retrieve a Service Object
 *ServiceApi* | [**updateService**](docs/Api/ServiceApi.md#updateservice) | **PUT** /service/{serviceId} | Update a Service
 *SurveyApi* | [**surveyAnalyseAnswers**](docs/Api/SurveyApi.md#surveyanalyseanswers) | **GET** /survey/analyse-answers | Analyse Answers and determine extra order lines
-*SurveyApi* | [**surveyRetreivePossibleOrderlines**](docs/Api/SurveyApi.md#surveyretreivepossibleorderlines) | **GET** /survey/retrieve-possible-orderlines | Retrieve all orderlines for possible answers for a given question
+*SurveyApi* | [**surveyRetreivePossibleOrderlines**](docs/Api/SurveyApi.md#surveyretreivepossibleorderlines) | **POST** /survey/retrieve-possible-orderlines | Retrieve all orderlines for possible answers for a given question
 *TimeslotsApi* | [**timeslotsRetreivePossibleOrderlines**](docs/Api/TimeslotsApi.md#timeslotsretreivepossibleorderlines) | **POST** /timeslots/retrieve-possible-orderlines | Retrieve all orderlines for given timeslots
 
 
@@ -133,12 +133,14 @@ Class | Method | HTTP request | Description
  - [OrderlineModel](docs/Model/OrderlineModel.md)
  - [OrderlineOptionsModel](docs/Model/OrderlineOptionsModel.md)
  - [OrderlineRetrieveListArguments](docs/Model/OrderlineRetrieveListArguments.md)
+ - [PossibleOrderlinesPostModel](docs/Model/PossibleOrderlinesPostModel.md)
  - [PossibleOrderlinesResultModel](docs/Model/PossibleOrderlinesResultModel.md)
  - [ServiceFiltersModel](docs/Model/ServiceFiltersModel.md)
  - [ServiceListResponse](docs/Model/ServiceListResponse.md)
  - [ServiceModel](docs/Model/ServiceModel.md)
  - [ServiceOptionsModel](docs/Model/ServiceOptionsModel.md)
  - [ServiceRetrieveListArguments](docs/Model/ServiceRetrieveListArguments.md)
+ - [SurveyOrderlinesPostModel](docs/Model/SurveyOrderlinesPostModel.md)
  - [TimeSlotsOrderlinesPostModel](docs/Model/TimeSlotsOrderlinesPostModel.md)
  - [TimeslotModel](docs/Model/TimeslotModel.md)
 

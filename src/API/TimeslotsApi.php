@@ -108,7 +108,7 @@ class TimeslotsApi
      *
      * @param string $back_office_partner_id BackOffice Partner ID (required)
      * @param string $front_office_partner_id FrontOffice Partner ID (required)
-     * @param \SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel $body Orderline object (required)
+     * @param \SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel $body TimeSlots and FieldAndValues (required)
      * @throws \SayWhenOrderlines\ApiException on non-2xx response
      * @return \SayWhenOrderlines\Model\TimeslotModel[]
      */
@@ -125,7 +125,7 @@ class TimeslotsApi
      *
      * @param string $back_office_partner_id BackOffice Partner ID (required)
      * @param string $front_office_partner_id FrontOffice Partner ID (required)
-     * @param \SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel $body Orderline object (required)
+     * @param \SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel $body TimeSlots and FieldAndValues (required)
      * @throws \SayWhenOrderlines\ApiException on non-2xx response
      * @return array of \SayWhenOrderlines\Model\TimeslotModel[], HTTP status code, HTTP response headers (array of strings)
      */

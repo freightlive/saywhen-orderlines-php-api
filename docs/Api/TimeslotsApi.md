@@ -27,7 +27,7 @@ SayWhenOrderlines\Configuration::getDefaultConfiguration()->setApiKey('ApiKey', 
 $api_instance = new SayWhenOrderlines\Api\TimeslotsApi();
 $back_office_partner_id = "back_office_partner_id_example"; // string | BackOffice Partner ID
 $front_office_partner_id = "front_office_partner_id_example"; // string | FrontOffice Partner ID
-$body = new \SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel(); // \SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel | Orderline object
+$body = new \SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel(); // \SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel | TimeSlots and FieldAndValues
 
 try {
     $result = $api_instance->timeslotsRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $body);
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **back_office_partner_id** | **string**| BackOffice Partner ID |
  **front_office_partner_id** | **string**| FrontOffice Partner ID |
- **body** | [**\SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel**](../Model/\SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel.md)| Orderline object |
+ **body** | [**\SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel**](../Model/\SayWhenOrderlines\Model\TimeSlotsOrderlinesPostModel.md)| TimeSlots and FieldAndValues |
 
 ### Return type
 

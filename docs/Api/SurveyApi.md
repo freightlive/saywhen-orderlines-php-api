@@ -5,11 +5,11 @@ All URIs are relative to *https://orderlines.saywhen.nl/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**surveyAnalyseAnswers**](SurveyApi.md#surveyAnalyseAnswers) | **GET** /survey/analyse-answers | Analyse Answers and determine extra order lines
-[**surveyRetreivePossibleOrderlines**](SurveyApi.md#surveyRetreivePossibleOrderlines) | **GET** /survey/retrieve-possible-orderlines | Retrieve all orderlines for possible answers for a given question
+[**surveyRetreivePossibleOrderlines**](SurveyApi.md#surveyRetreivePossibleOrderlines) | **POST** /survey/retrieve-possible-orderlines | Retrieve all orderlines for possible answers for a given question
 
 
 # **surveyAnalyseAnswers**
-> \SayWhenOrderlines\Model\OrderlineModel[] surveyAnalyseAnswers($back_office_partner_id, $front_office_partner_id, $questions_and_answers, $fields_and_values)
+> \SayWhenOrderlines\Model\OrderlineModel[] surveyAnalyseAnswers($back_office_partner_id, $front_office_partner_id, $body)
 
 Analyse Answers and determine extra order lines
 
@@ -28,11 +28,10 @@ SayWhenOrderlines\Configuration::getDefaultConfiguration()->setApiKey('ApiKey', 
 $api_instance = new SayWhenOrderlines\Api\SurveyApi();
 $back_office_partner_id = "back_office_partner_id_example"; // string | BackOffice Partner ID
 $front_office_partner_id = "front_office_partner_id_example"; // string | FrontOffice Partner ID
-$questions_and_answers = "questions_and_answers_example"; // string | Questions and Answers in JSON format
-$fields_and_values = "fields_and_values_example"; // string | Fields and Values in JSON format
+$body = new \SayWhenOrderlines\Model\SurveyOrderlinesPostModel(); // \SayWhenOrderlines\Model\SurveyOrderlinesPostModel | SurveyOrderlinesPostModel
 
 try {
-    $result = $api_instance->surveyAnalyseAnswers($back_office_partner_id, $front_office_partner_id, $questions_and_answers, $fields_and_values);
+    $result = $api_instance->surveyAnalyseAnswers($back_office_partner_id, $front_office_partner_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SurveyApi->surveyAnalyseAnswers: ', $e->getMessage(), PHP_EOL;
@@ -46,8 +45,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **back_office_partner_id** | **string**| BackOffice Partner ID |
  **front_office_partner_id** | **string**| FrontOffice Partner ID |
- **questions_and_answers** | **string**| Questions and Answers in JSON format |
- **fields_and_values** | **string**| Fields and Values in JSON format |
+ **body** | [**\SayWhenOrderlines\Model\SurveyOrderlinesPostModel**](../Model/\SayWhenOrderlines\Model\SurveyOrderlinesPostModel.md)| SurveyOrderlinesPostModel |
 
 ### Return type
 
@@ -65,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **surveyRetreivePossibleOrderlines**
-> \SayWhenOrderlines\Model\PossibleOrderlinesResultModel surveyRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $previous_questions, $next_question, $collected_order_line_references, $fields_object)
+> \SayWhenOrderlines\Model\PossibleOrderlinesResultModel surveyRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $body)
 
 Retrieve all orderlines for possible answers for a given question
 
@@ -84,13 +82,10 @@ SayWhenOrderlines\Configuration::getDefaultConfiguration()->setApiKey('ApiKey', 
 $api_instance = new SayWhenOrderlines\Api\SurveyApi();
 $back_office_partner_id = "back_office_partner_id_example"; // string | BackOffice Partner ID
 $front_office_partner_id = "front_office_partner_id_example"; // string | FrontOffice Partner ID
-$previous_questions = "previous_questions_example"; // string | Question and Answers in JSON format
-$next_question = "next_question_example"; // string | nextQuestion in JSON format
-$collected_order_line_references = "collected_order_line_references_example"; // string | OrderLine References which are already collected in JSON format
-$fields_object = "fields_object_example"; // string | Fields in JSON format
+$body = new \SayWhenOrderlines\Model\PossibleOrderlinesPostModel(); // \SayWhenOrderlines\Model\PossibleOrderlinesPostModel | PossibleOrderlinesPostModel
 
 try {
-    $result = $api_instance->surveyRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $previous_questions, $next_question, $collected_order_line_references, $fields_object);
+    $result = $api_instance->surveyRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SurveyApi->surveyRetreivePossibleOrderlines: ', $e->getMessage(), PHP_EOL;
@@ -104,10 +99,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **back_office_partner_id** | **string**| BackOffice Partner ID |
  **front_office_partner_id** | **string**| FrontOffice Partner ID |
- **previous_questions** | **string**| Question and Answers in JSON format |
- **next_question** | **string**| nextQuestion in JSON format |
- **collected_order_line_references** | **string**| OrderLine References which are already collected in JSON format |
- **fields_object** | **string**| Fields in JSON format |
+ **body** | [**\SayWhenOrderlines\Model\PossibleOrderlinesPostModel**](../Model/\SayWhenOrderlines\Model\PossibleOrderlinesPostModel.md)| PossibleOrderlinesPostModel |
 
 ### Return type
 

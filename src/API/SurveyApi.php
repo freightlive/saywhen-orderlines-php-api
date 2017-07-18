@@ -108,14 +108,13 @@ class SurveyApi
      *
      * @param string $back_office_partner_id BackOffice Partner ID (required)
      * @param string $front_office_partner_id FrontOffice Partner ID (required)
-     * @param string $questions_and_answers Questions and Answers in JSON format (required)
-     * @param string $fields_and_values Fields and Values in JSON format (required)
+     * @param \SayWhenOrderlines\Model\SurveyOrderlinesPostModel $body SurveyOrderlinesPostModel (required)
      * @throws \SayWhenOrderlines\ApiException on non-2xx response
      * @return \SayWhenOrderlines\Model\OrderlineModel[]
      */
-    public function surveyAnalyseAnswers($back_office_partner_id, $front_office_partner_id, $questions_and_answers, $fields_and_values)
+    public function surveyAnalyseAnswers($back_office_partner_id, $front_office_partner_id, $body)
     {
-        list($response) = $this->surveyAnalyseAnswersWithHttpInfo($back_office_partner_id, $front_office_partner_id, $questions_and_answers, $fields_and_values);
+        list($response) = $this->surveyAnalyseAnswersWithHttpInfo($back_office_partner_id, $front_office_partner_id, $body);
         return $response;
     }
 
@@ -126,12 +125,11 @@ class SurveyApi
      *
      * @param string $back_office_partner_id BackOffice Partner ID (required)
      * @param string $front_office_partner_id FrontOffice Partner ID (required)
-     * @param string $questions_and_answers Questions and Answers in JSON format (required)
-     * @param string $fields_and_values Fields and Values in JSON format (required)
+     * @param \SayWhenOrderlines\Model\SurveyOrderlinesPostModel $body SurveyOrderlinesPostModel (required)
      * @throws \SayWhenOrderlines\ApiException on non-2xx response
      * @return array of \SayWhenOrderlines\Model\OrderlineModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function surveyAnalyseAnswersWithHttpInfo($back_office_partner_id, $front_office_partner_id, $questions_and_answers, $fields_and_values)
+    public function surveyAnalyseAnswersWithHttpInfo($back_office_partner_id, $front_office_partner_id, $body)
     {
         // verify the required parameter 'back_office_partner_id' is set
         if ($back_office_partner_id === null) {
@@ -141,13 +139,9 @@ class SurveyApi
         if ($front_office_partner_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $front_office_partner_id when calling surveyAnalyseAnswers');
         }
-        // verify the required parameter 'questions_and_answers' is set
-        if ($questions_and_answers === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $questions_and_answers when calling surveyAnalyseAnswers');
-        }
-        // verify the required parameter 'fields_and_values' is set
-        if ($fields_and_values === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fields_and_values when calling surveyAnalyseAnswers');
+        // verify the required parameter 'body' is set
+        if ($body === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling surveyAnalyseAnswers');
         }
         // parse inputs
         $resourcePath = "/survey/analyse-answers";
@@ -169,18 +163,15 @@ class SurveyApi
         if ($front_office_partner_id !== null) {
             $queryParams['frontOfficePartnerId'] = $this->apiClient->getSerializer()->toQueryValue($front_office_partner_id);
         }
-        // query params
-        if ($questions_and_answers !== null) {
-            $queryParams['questionsAndAnswers'] = $this->apiClient->getSerializer()->toQueryValue($questions_and_answers);
-        }
-        // query params
-        if ($fields_and_values !== null) {
-            $queryParams['fieldsAndValues'] = $this->apiClient->getSerializer()->toQueryValue($fields_and_values);
-        }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -224,16 +215,13 @@ class SurveyApi
      *
      * @param string $back_office_partner_id BackOffice Partner ID (required)
      * @param string $front_office_partner_id FrontOffice Partner ID (required)
-     * @param string $previous_questions Question and Answers in JSON format (required)
-     * @param string $next_question nextQuestion in JSON format (required)
-     * @param string $collected_order_line_references OrderLine References which are already collected in JSON format (required)
-     * @param string $fields_object Fields in JSON format (required)
+     * @param \SayWhenOrderlines\Model\PossibleOrderlinesPostModel $body PossibleOrderlinesPostModel (required)
      * @throws \SayWhenOrderlines\ApiException on non-2xx response
      * @return \SayWhenOrderlines\Model\PossibleOrderlinesResultModel
      */
-    public function surveyRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $previous_questions, $next_question, $collected_order_line_references, $fields_object)
+    public function surveyRetreivePossibleOrderlines($back_office_partner_id, $front_office_partner_id, $body)
     {
-        list($response) = $this->surveyRetreivePossibleOrderlinesWithHttpInfo($back_office_partner_id, $front_office_partner_id, $previous_questions, $next_question, $collected_order_line_references, $fields_object);
+        list($response) = $this->surveyRetreivePossibleOrderlinesWithHttpInfo($back_office_partner_id, $front_office_partner_id, $body);
         return $response;
     }
 
@@ -244,14 +232,11 @@ class SurveyApi
      *
      * @param string $back_office_partner_id BackOffice Partner ID (required)
      * @param string $front_office_partner_id FrontOffice Partner ID (required)
-     * @param string $previous_questions Question and Answers in JSON format (required)
-     * @param string $next_question nextQuestion in JSON format (required)
-     * @param string $collected_order_line_references OrderLine References which are already collected in JSON format (required)
-     * @param string $fields_object Fields in JSON format (required)
+     * @param \SayWhenOrderlines\Model\PossibleOrderlinesPostModel $body PossibleOrderlinesPostModel (required)
      * @throws \SayWhenOrderlines\ApiException on non-2xx response
      * @return array of \SayWhenOrderlines\Model\PossibleOrderlinesResultModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function surveyRetreivePossibleOrderlinesWithHttpInfo($back_office_partner_id, $front_office_partner_id, $previous_questions, $next_question, $collected_order_line_references, $fields_object)
+    public function surveyRetreivePossibleOrderlinesWithHttpInfo($back_office_partner_id, $front_office_partner_id, $body)
     {
         // verify the required parameter 'back_office_partner_id' is set
         if ($back_office_partner_id === null) {
@@ -261,21 +246,9 @@ class SurveyApi
         if ($front_office_partner_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $front_office_partner_id when calling surveyRetreivePossibleOrderlines');
         }
-        // verify the required parameter 'previous_questions' is set
-        if ($previous_questions === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $previous_questions when calling surveyRetreivePossibleOrderlines');
-        }
-        // verify the required parameter 'next_question' is set
-        if ($next_question === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $next_question when calling surveyRetreivePossibleOrderlines');
-        }
-        // verify the required parameter 'collected_order_line_references' is set
-        if ($collected_order_line_references === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $collected_order_line_references when calling surveyRetreivePossibleOrderlines');
-        }
-        // verify the required parameter 'fields_object' is set
-        if ($fields_object === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fields_object when calling surveyRetreivePossibleOrderlines');
+        // verify the required parameter 'body' is set
+        if ($body === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling surveyRetreivePossibleOrderlines');
         }
         // parse inputs
         $resourcePath = "/survey/retrieve-possible-orderlines";
@@ -297,26 +270,15 @@ class SurveyApi
         if ($front_office_partner_id !== null) {
             $queryParams['frontOfficePartnerId'] = $this->apiClient->getSerializer()->toQueryValue($front_office_partner_id);
         }
-        // query params
-        if ($previous_questions !== null) {
-            $queryParams['previousQuestions'] = $this->apiClient->getSerializer()->toQueryValue($previous_questions);
-        }
-        // query params
-        if ($next_question !== null) {
-            $queryParams['nextQuestion'] = $this->apiClient->getSerializer()->toQueryValue($next_question);
-        }
-        // query params
-        if ($collected_order_line_references !== null) {
-            $queryParams['collectedOrderLineReferences'] = $this->apiClient->getSerializer()->toQueryValue($collected_order_line_references);
-        }
-        // query params
-        if ($fields_object !== null) {
-            $queryParams['fieldsObject'] = $this->apiClient->getSerializer()->toQueryValue($fields_object);
-        }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -332,7 +294,7 @@ class SurveyApi
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath,
-                'GET',
+                'POST',
                 $queryParams,
                 $httpBody,
                 $headerParams,
